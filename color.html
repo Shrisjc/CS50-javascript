@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // document
+        //   .querySelectorAll("button")
+        //   .forEach(function (button, ind, array) {
+        //     button.onclick = function () {
+        //       alert(ind);
+        //       document.querySelector("#hello").style.color =
+        //         button.dataset.color;
+        //     };
+        //   });
+        document.querySelector("select").onchange = function () {
+          const colorSelected = this.value;
+          console.log(colorSelected);
+          document.querySelector("#hello").style.color = this.value;
+        };
+        // document.querySelector("#red").onclick = function () {
+        //   console.log(this);
+        //   document.querySelector("#hello").style.color = "red";
+        // };
+      });
+    </script>
+  </head>
+  <body>
+    <h1 id="hello">Hello</h1>
+    <!--
+    <button data-color="red">Red</button>
+    <button data-color="blue">Blue</button>
+    <button data-color="green">Green</button>-->
+    <!-- <button id="red">Red</button>
+    <button id="blue">Blue</button>
+    <button id="green">Green</button>-->
+    <select>
+      <option value="black">Black</option>
+      <option value="red">Red</option>
+      <option value="yellow">Yellow</option>
+      <option value="green">Green</option>
+      <option value="purple">Purple</option>
+      <option value="blue">Blue</option>
+      <option value="orange">Orange</option>
+      <option value="pink">Pink</option>
+      <option value="brown">Brown</option>
+      <option value="gray">Gray</option>
+    </select>
+  </body>
+</html>
