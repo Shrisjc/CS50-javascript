@@ -7,7 +7,7 @@
   </head>
   <body>
     <h1>Click count = 0</h1>
-    <script>
+    <!--<script>
       const clickCount = document.querySelector("h1");
       let counter = 0;
       function count() {
@@ -17,7 +17,12 @@
           alert(`You have clicked ${counter} times`);
         }
       }
-    </script>
-    <button onclick="count()">Count</button>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelector("button").onclick = count;
+      });
+    </script>-->
+    <button>Count</button>
+    <!--<button onclick="count()">Count</button>-->
+    <script src="counter.js"></script>
   </body>
 </html>
