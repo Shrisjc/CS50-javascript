@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task</title>
+  </head>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // By default submit button is disabled
+      document.querySelector("#sumbit").disabled = true;
+      document.querySelector("#task").onkeyup = function () {
+        if (document.querySelector("#task").value.length > 0) {
+          document.querySelector("#sumbit").disabled = false;
+        } else {
+          document.querySelector("#sumbit").disabled = true;
+        }
+      };
+      document.querySelector("form").onsubmit = () => {
+        const inputValue = document.querySelector("#task").value;
+        console.log(inputValue);
+        if (inputValue != "") {
+          const li = document.createElement("li");
+          li.innerHTML = inputValue;
+          document.querySelector("#tasks").append(li);
+        } else {
+          alert("Write something");
+        }
+        document.querySelector("#task").value = "";
+        document.querySelector("#sumbit").disabled = true;
+
+        return false;
+      };
+    });
+  </script>
+  <body>
+    <h1>Task</h1>
+    <ul id="tasks"></ul>
+    <form>
+      <input type="text" placeholder="Enter new task" id="task" />
+      <input type="submit" id="sumbit" />
+    </form>
+  </body>
+</html>
